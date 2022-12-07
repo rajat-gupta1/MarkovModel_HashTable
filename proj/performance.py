@@ -29,6 +29,7 @@ if __name__ == "__main__":
 
     # TODO: run performance tests as outlined in README.md
 
+    # Creating an empty dataframe
     df = pd.DataFrame(columns = ['Implementation', 'K', 'Time'])
 
     use_hashtable = True
@@ -41,6 +42,8 @@ if __name__ == "__main__":
                 start = time.perf_counter()
                 tup = identify_speaker(readA, readB, readC, i + 1, use_hashtable)
                 elapsed = time.perf_counter() - start
+
+                # Total time for all the runs for one k
                 total_time += elapsed
             total_time /= (runs)
             if k == 0:
@@ -50,6 +53,7 @@ if __name__ == "__main__":
 
     # TODO: write execution_graph.png
 
+    # Plotting the graph and saving it
     sns.pointplot(x = df['K'], y = df['Time'], hue= df['Implementation'], linestyle='-', marker='o')
     plt.ylabel(f"Average Time (Runs={runs})")
     plt.title("HashTable vs Python dict")
