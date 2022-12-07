@@ -143,6 +143,11 @@ def test_probabilities(fileA, fileB, fileC, k, expected, prob1, prob2, use_hasht
     # Check to to see if the probabilities returned by identify_speaker
     # matches the expected probabilities
 
+    print(f"{prob1=}")
+    print(f"{prob_a=}")
+    print(f"{prob2=}")
+    print(f"{prob_b=}")
+
     if not math.isclose(prob_a, prob1):
         s = (
             "actual speaker probability A ({}) and expected probability "
